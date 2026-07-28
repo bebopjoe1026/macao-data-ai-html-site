@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+:root {
+    --primary: #0F172A;
+    --accent: #14B8A6;
+}
+
+body {
+    font-family: 'Inter', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+}
+
+.hero-gradient {
+    background: linear-gradient(135deg, #0F172A 0%, #134E4A 100%);
+}
+
+.section-header {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+.nav-active {
+    color: #14B8A6;
+    font-weight: 600;
+    border-bottom: 2px solid #14B8A6;
+}
+
+.capability-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.capability-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.value-card {
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.value-card:hover {
+    transform: translateY(-4px);
+}
+
+.wizard-step {
+    transition: all 0.4s ease;
+}
+
+.step-indicator {
+    transition: all 0.3s ease;
+}
+
+.step-active {
+    background-color: #14B8A6;
+    color: white;
+    border-color: #14B8A6;
+}
+
+.step-completed {
+    background-color: #14B8A6;
+    color: white;
+    border-color: #14B8A6;
+}
+
+.risk-low {
+    background-color: #DCFCE7;
+    color: #166534;
+    border-color: #86EFAC;
+}
+
+.risk-medium {
+    background-color: #FEF9C3;
+    color: #854D0E;
+    border-color: #FACC15;
+}
+
+.risk-high {
+    background-color: #FEE2E2;
+    color: #991B1B;
+    border-color: #FCA5A5;
+}
+
+.modern-shadow {
+    box-shadow: 0 10px 15px -3px rgb(15 23 42 / 0.08), 0 4px 6px -4px rgb(15 23 42 / 0.08);
+}
+
+.tech-gradient {
+    background: linear-gradient(to right, #14B8A6, #0D9488);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.demo-container {
+    background: linear-gradient(to bottom, #F8FAFC, #F1F5F9);
+}
+
+.nav-scrolled {
+    box-shadow: 0 4px 6px -1px rgb(15 23 42 / 0.07), 0 2px 4px -2px rgb(15 23 42 / 0.07);
+}
+
+.partner-logo {
+    transition: all 0.2s ease;
+}
+
+.partner-logo:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.modal {
+    animation: modalPopIn 0.2s ease-out forwards;
+}
+
+@keyframes modalPopIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.form-input {
+    transition: all 0.2s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #14B8A6;
+    box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+}
+
+.metric-value {
+    font-variant-numeric: tabular-nums;
+}
+
+.report-section {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.nav-link {
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #14B8A6;
+}
+
+.nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #14B8A6;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover:after {
+    width: 100%;
+}
+
+/* 修复 sticky 导航栏导致的锚点滚动偏移问题 */
+section[id] {
+    scroll-margin-top: 75px;
+}

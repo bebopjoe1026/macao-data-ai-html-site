@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据跨境与人工智能国际合作服务中心 | 门户Demo</title>
+
+    <!-- ==================== 外部资源（CDN） ==================== -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- ==================== 本地样式 ==================== -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- 数据与模块（注意加载顺序） -->
+    <script src="js/data.js" defer></script>
+    <script src="js/i18n.js" defer></script>
+    <script src="js/wizard.js" defer></script>
+    <script src="js/dynamics.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+    <!-- Header / Navbar -->
+    <nav id="navbar" class="bg-white border-b border-slate-200 sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="px-8 py-4 flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-2.5 flex-shrink-0">
+                    <div
+                        class="w-10 h-10 bg-teal-600 rounded-2xl flex items-center justify-center shadow-inner flex-shrink-0">
+                        <i class="fa-solid fa-globe text-white text-2xl"></i>
+                    </div>
+                    <div class="min-w-0">
+                        <div class="font-bold text-xl lg:text-2xl tracking-tighter text-slate-900 whitespace-nowrap">
+                            澳门数据跨境与人工智能合作服务中心</div>
+                        <div class="text-[10px] text-teal-600 -mt-0.5 font-medium tracking-[1.5px] whitespace-nowrap">
+                            MACAO CROSS-BORDER DATA &amp; AI COLLABORATION HUB</div>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                    <a href="#home" onclick="document.getElementById('home').scrollIntoView({ behavior: 'smooth' })"
+                        class="nav-link px-1 py-1 text-slate-600 hover:text-teal-600" data-i18n="nav.home">首页</a>
+                    <a href="#capabilities"
+                        onclick="document.getElementById('capabilities').scrollIntoView({ behavior: 'smooth' })"
+                        class="nav-link px-1 py-1 text-slate-600 hover:text-teal-600"
+                        data-i18n="nav.capabilities">核心能力</a>
+                    <a href="#partners"
+                        onclick="document.getElementById('partners').scrollIntoView({ behavior: 'smooth' })"
+                        class="nav-link px-1 py-1 text-slate-600 hover:text-teal-600" data-i18n="nav.partners">生态伙伴</a>
+                    <a href="#demo" onclick="document.getElementById('demo').scrollIntoView({ behavior: 'smooth' })"
+                        class="nav-link px-1 py-1 text-slate-600 hover:text-teal-600" data-i18n="nav.demo">服务体验</a>
+                    <a href="#dynamics"
+                        onclick="document.getElementById('dynamics').scrollIntoView({ behavior: 'smooth' })"
+                        class="nav-link px-1 py-1 text-slate-600 hover:text-teal-600" data-i18n="nav.dynamics">平台动态</a>
+                </div>
+
+                <div class="flex items-center gap-x-3">
+                    <!-- Contact Button -->
+                    <button onclick="showContactModal()"
+                        class="hidden md:flex items-center gap-x-2 px-5 py-2.5 text-sm font-semibold bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 rounded-3xl transition-colors">
+                        <i class="fa-solid fa-headset mr-1.5"></i>
+                        <span data-i18n="nav.contact">联系专属顾问</span>
+                    </button>
+
+                    <!-- 语言切换器 -->
+                    <div class="flex items-center bg-slate-100 rounded-full p-0.5 text-xs font-medium">
+                        <button onclick="switchLanguage('zh-CN')"
+                            class="lang-btn px-3 py-1 rounded-full transition-all data-[active=true]:bg-white data-[active=true]:shadow-sm"
+                            data-lang="zh-CN">简</button>
+
+                        <button onclick="switchLanguage('zh-TW')"
+                            class="lang-btn px-3 py-1 rounded-full transition-all data-[active=true]:bg-white data-[active=true]:shadow-sm"
+                            data-lang="zh-TW">繁</button>
+
+                        <button onclick="switchLanguage('en')"
+                            class="lang-btn px-3 py-1 rounded-full transition-all data-[active=true]:bg-white data-[active=true]:shadow-sm"
+                            data-lang="en">EN</button>
+                    </div>
+
+                    <!-- Mobile Menu -->
+                    <button
+                        class="md:hidden w-10 h-10 flex items-center justify-center text-slate-600 hover:bg-slate-100 rounded-2xl"
+                        onclick="toggleMobileMenu()">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white">
+        <div class="max-w-screen-2xl mx-auto px-8 pt-16 pb-20">
+            <div class="max-w-4xl">
+
+                <h1 class="text-6xl md:text-7xl font-bold tracking-tighter leading-none mb-6">
+                    <span data-i18n="hero.title.line1">澳门数据跨境与人工智能</span><br>
+                    <span data-i18n="hero.title.line2">合作服务中心</span>
+                </h1>
+
+                <p class="max-w-2xl text-2xl text-teal-100 font-light tracking-tight mb-10">
+                    <!-- 第一行 -->
+                    <span data-i18n="hero.subtitle">一站式跨境数据与AI能力聚合平台</span><br>
+
+                    <!-- 第二行（带样式） -->
+                    <span class="text-white/90 text-xl" data-i18n="hero.tagline">
+                        政策友好枢纽 · 多区域算力 · 合规专家网络
+                    </span>
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <!-- Primary CTA - Flagship -->
+                    <button onclick="scrollToDemoAndStartWizard()"
+                        class="group flex-1 sm:flex-none inline-flex items-center justify-center gap-x-3 px-9 py-4 bg-white text-slate-900 hover:bg-amber-50 font-semibold text-lg rounded-3xl transition-all active:scale-[0.985] shadow-xl shadow-black/20"
+                        data-i18n="hero.cta.assessment">
+                        <span>免费启动数据合规自助评估</span>
+                        <i class="fa-solid fa-arrow-right group-active:translate-x-1 transition-transform"></i>
+                    </button>
+
+                    <button onclick="document.getElementById('capabilities').scrollIntoView({ behavior: 'smooth' })"
+                        class="flex-1 sm:flex-none inline-flex items-center justify-center gap-x-2 px-8 py-4 bg-white/10 hover:bg-white/15 border border-white/30 font-medium text-lg rounded-3xl transition-all backdrop-blur-sm"
+                        data-i18n="hero.cta.explore">
+                        <span>探索五大核心能力</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Propositions -->
+    <section class="max-w-screen-2xl mx-auto px-8 pt-14 pb-8">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl" data-i18n="value.sectionTitle">
+                澳门枢纽优势，解决您的核心痛点</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+
+            <!-- 卡片1：解决核心痛点 -->
+            <div
+                class="group bg-white border border-slate-200 rounded-3xl p-8 shadow-xl shadow-slate-200/60 hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300">
+                <div class="mb-7">
+                    <div class="font-bold text-2xl tracking-tight text-slate-900"
+                        data-i18n="value.solvePainPoints.title">解决核心痛点</div>
+                    <!-- 标题底部强调线 -->
+                    <div class="mt-2 h-px w-10 bg-gradient-to-r from-teal-500 to-transparent rounded-full"></div>
+                </div>
+
+                <div class="space-y-5">
+                    <!-- 痛点1 -->
+                    <div class="flex gap-4 group/item">
+                        <div class="flex-shrink-0">
+                            <div
+                                class="w-9 h-9 rounded-2xl bg-teal-100 flex items-center justify-center transition-colors group-hover/item:bg-teal-200">
+                                <i class="fa-solid fa-globe text-teal-600"></i>
+                            </div>
+                        </div>
+                        <div class="text-sm leading-relaxed text-slate-600 pt-0.5">
+                            <!-- 左侧 -->
+                            <span data-i18n="value.solvePainPoints.item1.left">数据出境合规难 → </span>
+
+                            <!-- 右侧加粗部分 -->
+                            <span class="font-semibold text-slate-800" data-i18n="value.solvePainPoints.item1.right">
+                                免费评估 + 风险报告 + 合规建议
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- 痛点2 -->
+                    <div class="flex gap-4 group/item">
+                        <div class="flex-shrink-0">
+                            <div
+                                class="w-9 h-9 rounded-2xl bg-teal-100 flex items-center justify-center transition-colors group-hover/item:bg-teal-200">
+                                <i class="fa-solid fa-server text-teal-600"></i>
+                            </div>
+                        </div>
+                        <div class="text-sm leading-relaxed text-slate-600 pt-0.5">
+                            <!-- 左侧 -->
+                            <span data-i18n="value.solvePainPoints.item2.left">算力获取贵、跨区域难 → </span>
+
+                            <!-- 右侧加粗部分 -->
+                            <span class="font-semibold text-slate-800" data-i18n="value.solvePainPoints.item2.right">
+                                中国境内+东南亚双算力池，按需调度
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- 痛点3 -->
+                    <div class="flex gap-4 group/item">
+                        <div class="flex-shrink-0">
+                            <div
+                                class="w-9 h-9 rounded-2xl bg-teal-100 flex items-center justify-center transition-colors group-hover/item:bg-teal-200">
+                                <i class="fa-solid fa-plane-departure text-teal-600"></i>
+                            </div>
+                        </div>
+                        <div class="text-sm leading-relaxed text-slate-600 pt-0.5">
+                            <!-- 左侧 -->
+                            <span data-i18n="value.solvePainPoints.item3.left">出海数据与本地支持不足 → </span>
+
+                            <!-- 右侧加粗部分 -->
+                            <span class="font-semibold text-slate-800" data-i18n="value.solvePainPoints.item3.right">
+                                一站式数据合规方案 + 国际本地化支持
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 卡片2：平台核心优势 -->
+            <div
+                class="group bg-white border border-slate-200 rounded-3xl p-8 shadow-xl shadow-slate-200/60 hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300">
+                <div class="mb-7">
+                    <div class="font-bold text-2xl tracking-tight text-slate-900"
+                        data-i18n="value.platformAdvantage.title">平台核心优势</div>
+                    <!-- 标题底部强调线 -->
+                    <div class="mt-2 h-px w-10 bg-gradient-to-r from-teal-500 to-transparent rounded-full"></div>
+                </div>
+
+                <div class="space-y-5">
+                    <!-- 优势1 -->
+                    <div class="flex gap-4 group/item">
+                        <div class="flex-shrink-0">
+                            <div
+                                class="w-9 h-9 rounded-2xl bg-teal-100 flex items-center justify-center transition-colors group-hover/item:bg-teal-200">
+                                <i class="fa-solid fa-shield-halved text-teal-600"></i>
+                            </div>
+                        </div>
+                        <div class="text-sm leading-relaxed text-slate-600 pt-0.5">
+                            <!-- 左侧 -->
+                            <span data-i18n="value.platformAdvantage.item1.left">澳门枢纽 + 国际专线 → </span>
+
+                            <!-- 右侧加粗部分 -->
+                            <span class="font-semibold text-slate-800" data-i18n="value.platformAdvantage.item1.right">
+                                监管友好，高速跨境网络
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- 优势2 -->
+                    <div class="flex gap-4 group/item">
+                        <div class="flex-shrink-0">
+                            <div
+                                class="w-9 h-9 rounded-2xl bg-teal-100 flex items-center justify-center transition-colors group-hover/item:bg-teal-200">
+                                <i class="fa-solid fa-handshake text-teal-600"></i>
+                            </div>
+                        </div>
+                        <div class="text-sm leading-relaxed text-slate-600 pt-0.5">
+                            <!-- 左侧 -->
+                            <span data-i18n="value.platformAdvantage.item2.left">聚合顶尖伙伴 → </span>
+
+                            <!-- 右侧加粗部分 -->
+                            <span class="font-semibold text-slate-800" data-i18n="value.platformAdvantage.item2.right">
+                                数据集团、火山引擎、邓白氏等一站式能力资源
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- 优势3 -->
+                    <div class="flex gap-4 group/item">
+                        <div class="flex-shrink-0">
+                            <div
+                                class="w-9 h-9 rounded-2xl bg-teal-100 flex items-center justify-center transition-colors group-hover/item:bg-teal-200">
+                                <i class="fa-solid fa-balance-scale text-teal-600"></i>
+                            </div>
+                        </div>
+                        <div class="text-sm leading-relaxed text-slate-600 pt-0.5">
+                            <!-- 左侧 -->
+                            <span data-i18n="value.platformAdvantage.item3.left">政策协调 + 高可用网络 → </span>
+
+                            <!-- 右侧加粗部分 -->
+                            <span class="font-semibold text-slate-800" data-i18n="value.platformAdvantage.item3.right">
+                                国际业务连续性双保障
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section id="capabilities" class="max-w-screen-2xl mx-auto px-8 py-12 bg-white border-y border-slate-100">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-8 gap-y-4">
+            <div>
+                <!-- 主标题 -->
+                <h2 class="section-header" data-i18n="capability.section.title">
+                    五大核心能力
+                </h2>
+            </div>
+            <button onclick="document.getElementById('demo').scrollIntoView({ behavior: 'smooth' })"
+                class="inline-flex items-center text-teal-600 hover:text-teal-700 font-medium text-sm group">
+                <span data-i18n="capability.section.cta">进入数据合规预评估</span>
+                <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-0.5 transition"></i>
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+
+            <!-- Capability 1: 数据跨境 -->
+            <div class="capability-card group bg-white border border-slate-200 hover:border-teal-200 rounded-3xl p-6 flex flex-col modern-shadow cursor-pointer"
+                onclick="showCapabilityModal(0)">
+                <div class="flex items-start justify-between mb-4">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-teal-500 to-teal-600 text-white rounded-2xl flex items-center justify-center shadow-inner">
+                        <i class="fa-solid fa-globe fa-2x"></i>
+                    </div>
+                </div>
+                <div class="font-bold text-2xl tracking-tight mb-2" data-i18n="capability.dataCrossBorder.title">
+                    数据跨境
+                </div>
+                <div class="text-slate-600 flex-1 text-[15px]" data-i18n="capability.dataCrossBorder.desc">
+                    数据交易、跨境可信数据空间、离岸数据中心及合规服务。依托中信国际电讯全球网络与多地合作伙伴资源。
+                </div>
+                <div class="mt-5 pt-4 border-t flex items-center justify-between text-sm">
+                    <span class="font-medium text-teal-600 group-hover:underline"
+                        data-i18n="capability.common.learnMore">
+                        了解详情
+                    </span>
+                    <button onclick="event.stopImmediatePropagation(); scrollToDemoAndStartWizard()"
+                        class="text-xs px-4 py-1.5 bg-teal-600 hover:bg-teal-700 transition text-white font-medium rounded-2xl"
+                        data-i18n="capability.dataCrossBorder.action">
+                        立即评估
+                    </button>
+                </div>
+            </div>
+
+            <!-- Capability 2: 算力调度 -->
+            <div class="capability-card group bg-white border border-slate-200 hover:border-teal-200 rounded-3xl p-6 flex flex-col modern-shadow cursor-pointer"
+                onclick="showCapabilityModal(1)">
+                <div class="flex items-start justify-between mb-4">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-sky-500 to-blue-600 text-white rounded-2xl flex items-center justify-center shadow-inner">
+                        <i class="fa-solid fa-microchip fa-2x"></i>
+                    </div>
+                </div>
+                <div class="font-bold text-2xl tracking-tight mb-2" data-i18n="capability.computingScheduling.title">
+                    算力调度
+                </div>
+                <div class="text-slate-600 flex-1 text-[15px]" data-i18n="capability.computingScheduling.desc">
+                    聚合国产与国际算力集群，支持模型智能路由与数据聚合平台，实现跨境低成本、高性能算力调度。
+                </div>
+                <div class="mt-5 pt-4 border-t flex items-center justify-between text-sm">
+                    <span class="font-medium text-teal-600 group-hover:underline"
+                        data-i18n="capability.common.learnMore">
+                        了解详情
+                    </span>
+                    <button onclick="event.stopImmediatePropagation(); showMiniDemo(1)"
+                        class="text-xs px-4 py-1.5 border border-slate-300 hover:bg-slate-50 font-medium rounded-2xl"
+                        data-i18n="capability.computingScheduling.action">
+                        快速匹配
+                    </button>
+                </div>
+            </div>
+
+            <!-- Capability 3: 企业出海 -->
+            <div class="capability-card group bg-white border border-slate-200 hover:border-teal-200 rounded-3xl p-6 flex flex-col modern-shadow cursor-pointer"
+                onclick="showCapabilityModal(2)">
+                <div class="flex items-start justify-between mb-4">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-violet-500 to-purple-600 text-white rounded-2xl flex items-center justify-center shadow-inner">
+                        <i class="fa-solid fa-plane-departure fa-2x"></i>
+                    </div>
+                </div>
+                <div class="font-bold text-2xl tracking-tight mb-2" data-i18n="capability.enterpriseGoingGlobal.title">
+                    企业出海
+                </div>
+                <div class="text-slate-600 flex-1 text-[15px]" data-i18n="capability.enterpriseGoingGlobal.desc">
+                    一站式DICT出海服务，结合东南亚本地支撑团队、跨境金融赋能及海外征信认证，助力中资企业全球化布局。
+                </div>
+                <div class="mt-5 pt-4 border-t flex items-center justify-between text-sm">
+                    <span class="font-medium text-teal-600 group-hover:underline"
+                        data-i18n="capability.common.learnMore">
+                        了解详情
+                    </span>
+                    <button onclick="event.stopImmediatePropagation(); showMiniDemo(2)"
+                        class="text-xs px-4 py-1.5 border border-slate-300 hover:bg-slate-50 font-medium rounded-2xl"
+                        data-i18n="capability.enterpriseGoingGlobal.action">
+                        规划出海
+                    </button>
+                </div>
+            </div>
+
+            <!-- Capability 4: 基础设施 -->
+            <div class="capability-card group bg-white border border-slate-200 hover:border-teal-200 rounded-3xl p-6 flex flex-col modern-shadow cursor-pointer"
+                onclick="showCapabilityModal(3)">
+                <div class="flex items-start justify-between mb-4">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-amber-500 to-orange-600 text-white rounded-2xl flex items-center justify-center shadow-inner">
+                        <i class="fa-solid fa-network-wired fa-2x"></i>
+                    </div>
+                </div>
+                <div class="font-bold text-2xl tracking-tight mb-2" data-i18n="capability.infrastructure.title">
+                    基础设施
+                </div>
+                <div class="text-slate-600 flex-1 text-[15px]" data-i18n="capability.infrastructure.desc">
+                    低时延网络 + 横琴/国内/东南亚智算中心 + 桂澳跨境数据专线，为数据跨境与算力调度提供高可用底座。
+                </div>
+                <div class="mt-5 pt-4 border-t flex items-center justify-between text-sm">
+                    <span class="font-medium text-teal-600 group-hover:underline"
+                        data-i18n="capability.common.learnMore">
+                        了解详情
+                    </span>
+                    <button onclick="event.stopImmediatePropagation(); showMiniDemo(3)"
+                        class="text-xs px-4 py-1.5 border border-slate-300 hover:bg-slate-50 font-medium rounded-2xl"
+                        data-i18n="capability.infrastructure.action">
+                        资源地图
+                    </button>
+                </div>
+            </div>
+
+            <!-- Capability 5: 标准及政策 -->
+            <div class="capability-card group bg-white border border-slate-200 hover:border-teal-200 rounded-3xl p-6 flex flex-col modern-shadow cursor-pointer"
+                onclick="showCapabilityModal(4)">
+                <div class="flex items-start justify-between mb-4">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-emerald-500 to-green-600 text-white rounded-2xl flex items-center justify-center shadow-inner">
+                        <i class="fa-solid fa-gavel fa-2x"></i>
+                    </div>
+                </div>
+                <div class="font-bold text-2xl tracking-tight mb-2" data-i18n="capability.standardsPolicy.title">
+                    标准及政策
+                </div>
+                <div class="text-slate-600 flex-1 text-[15px]" data-i18n="capability.standardsPolicy.desc">
+                    对接国家及国际标准，释放两岸三地政策红利，推动产学研生态合作与合规路径优化。
+                </div>
+                <div class="mt-5 pt-4 border-t flex items-center justify-between text-sm">
+                    <span class="font-medium text-teal-600 group-hover:underline"
+                        data-i18n="capability.common.learnMore">
+                        了解详情
+                    </span>
+                    <button onclick="event.stopImmediatePropagation(); showMiniDemo(4)"
+                        class="text-xs px-4 py-1.5 border border-slate-300 hover:bg-slate-50 font-medium rounded-2xl"
+                        data-i18n="capability.standardsPolicy.action">
+                        政策问答
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 生态伙伴 -->
+    <section id="partners" class="bg-white border-t border-slate-100 py-12">
+        <div class="max-w-screen-2xl mx-auto px-8">
+
+            <!-- 原有标题（保留） -->
+            <div class="text-center mb-10">
+                <div class="text-teal-600 text-sm font-semibold tracking-[2px]" data-i18n="partners.section.label">
+                    ECOSYSTEM
+                </div>
+                <h2 class="section-header" data-i18n="partners.section.title">
+                    顶尖生态伙伴，聚合全球能力
+                </h2>
+            </div>
+
+            <!-- ========== 政府支持 ========== -->
+            <div class="mb-12">
+                <div class="flex items-center justify-center gap-x-4 mb-6 max-w-5xl mx-auto">
+                    <div class="flex-1 h-px bg-emerald-100"></div>
+                    <div class="text-teal-600 text-sm font-semibold tracking-[2px] whitespace-nowrap"
+                        data-i18n="partners.governmentSupport">
+                        政府支持
+                    </div>
+                    <div class="flex-1 h-px bg-emerald-100"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                    <!-- 广西壮族自治区人民政府 -->
+                    <div
+                        class="partner-logo flex items-center justify-center px-5 py-6 bg-white border border-slate-200 rounded-3xl text-center hover:shadow-md transition">
+                        <div class="min-w-0 text-center">
+                            <div class="font-bold text-xl text-slate-800">
+                                广西壮族自治区人民政府
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 澳门特别行政区政府 -->
+                    <div
+                        class="partner-logo flex items-center justify-center px-5 py-6 bg-white border border-slate-200 rounded-3xl text-center hover:shadow-md transition">
+                        <div class="min-w-0 text-center">
+                            <div class="font-bold text-xl text-slate-800">
+                                澳门特别行政区政府
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== 合作机构 ========== -->
+            <div>
+                <div class="flex items-center gap-x-4 mb-6">
+                    <div class="flex-1 h-px bg-teal-100"></div>
+                    <div class="text-teal-600 text-sm font-semibold tracking-[2px] whitespace-nowrap"
+                        data-i18n="partners.cooperationPartners">
+                        合作机构
+                    </div>
+                    <div class="flex-1 h-px bg-teal-100"></div>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
+                    <!-- 原有8个生态伙伴（保持不变） -->
+                    <div
+                        class="partner-logo flex items-center justify-center px-5 py-4 bg-white border border-slate-200 rounded-3xl text-center hover:shadow-md transition">
+                        <div class="font-semibold text-slate-800">深圳数据交易所</div>
+                    </div>
+                    <div
+                        class="partner-logo flex items-center justify-center px-5 py-4 bg-white border border-slate-200 rounded-3xl text-center hover:shadow-md transition">
+                        <div class="font-semibold text-slate-800">邓白氏</div>
+                    </div>
+                    <div
+                        class="partner-logo flex items-center justify-center px-5 py-4 bg-white border border-slate-200 rounded-3xl text-center hover:shadow-md transition">
+                        <div class="font-semibold text-slate-800">广西数据集团</div>
+                    </div>
+                    <div
+                        class="partner-logo flex items-center justify-center px-5 py-4 bg-white border border-slate-200 rounded-3xl text-center hover:shadow-md transition">
+                        <div class="font-semibold text-slate-800">南一智能科技</div>
+                    </div>
+                    <div
+                        class="partner-logo flex items-center justify-center px-5 py-4 bg-white border border-slate-200 rounded-3xl text-center hover:shadow-md transition">
+                        <div class="font-semibold text-slate-800">中信集团</div>
+                    </div>
+                    <div
+                        class="partner-logo flex items-center justify-center px-5 py-4 bg-white border border-slate-200 rounded-3xl text-center hover:shadow-md transition">
+                        <div class="font-semibold text-slate-800">国家数据集团</div>
+                    </div>
+                    <div
+                        class="partner-logo flex items-center justify-center px-5 py-4 bg-white border border-slate-200 rounded-3xl text-center hover:shadow-md transition">
+                        <div class="font-semibold text-slate-800">澳门电讯</div>
+                    </div>
+                    <div
+                        class="partner-logo flex items-center justify-center px-5 py-4 bg-white border border-slate-200 rounded-3xl text-center hover:shadow-md transition">
+                        <div class="font-semibold text-slate-800">横琴智算中心</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Interactive Demo Zone - FLAGSHIP -->
+    <section id="demo" class="max-w-screen-2xl mx-auto px-8 py-14 demo-container">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex items-end justify-between mb-8">
+                <div>
+                    <h2 class="section-header mt-1" data-i18n="demo.section.title">
+                        数据跨境合规智能评估
+                    </h2>
+                    <p class="text-slate-600 mt-2" data-i18n="demo.section.subtitle">
+                        快速完成初步风险评估，获取个性化合规建议与服务推荐
+                    </p>
+                </div>
+            </div>
+
+            <!-- Wizard Container -->
+            <div class="bg-white border border-slate-200 shadow-xl shadow-slate-900/5 rounded-3xl overflow-hidden">
+
+                <!-- Progress Bar -->
+                <div class="px-8 pt-8 pb-4 bg-slate-50 border-b">
+                    <div class="flex items-center justify-between text-xs font-medium text-slate-500 mb-3 px-1">
+                        <div data-i18n="demo.progress.step1">企业画像</div>
+                        <div data-i18n="demo.progress.step2">数据与场景</div>
+                        <div data-i18n="demo.progress.step3">跨境方向</div>
+                        <div data-i18n="demo.progress.step4">生成报告</div>
+                    </div>
+                    <div class="h-2 bg-slate-200 rounded-full relative">
+                        <div id="progress-bar"
+                            class="absolute top-0 left-0 h-2 bg-gradient-to-r from-teal-500 to-teal-600 rounded-full transition-all duration-500"
+                            style="width: 25%"></div>
+                        <div class="absolute top-1/2 -translate-y-1/2 flex justify-between w-full px-1">
+                            <div id="step-dot-1" onclick="goToStep(1)"
+                                class="step-indicator w-5 h-5 bg-teal-600 border-2 border-white rounded-full cursor-pointer flex items-center justify-center text-[9px] font-bold text-white shadow">
+                                1</div>
+                            <div id="step-dot-2" onclick="goToStep(2)"
+                                class="step-indicator w-5 h-5 bg-white border-2 border-slate-300 rounded-full cursor-pointer flex items-center justify-center text-[9px] font-bold text-slate-400 shadow">
+                                2</div>
+                            <div id="step-dot-3" onclick="goToStep(3)"
+                                class="step-indicator w-5 h-5 bg-white border-2 border-slate-300 rounded-full cursor-pointer flex items-center justify-center text-[9px] font-bold text-slate-400 shadow">
+                                3</div>
+                            <div id="step-dot-4" onclick="goToStep(4)"
+                                class="step-indicator w-5 h-5 bg-white border-2 border-slate-300 rounded-full cursor-pointer flex items-center justify-center text-[9px] font-bold text-slate-400 shadow">
+                                4</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step Contents -->
+                <div class="p-8">
+
+                    <!-- STEP 1: 企业画像 -->
+                    <div id="step-1" class="wizard-step">
+                        <div class="mb-6">
+                            <div class="font-semibold text-xl flex items-center gap-x-2">
+                                <span class="text-teal-600">01</span>
+                                <span data-i18n="demo.step1.title">企业画像</span>
+                            </div>
+                            <p class="text-sm text-slate-500 mt-1" data-i18n="demo.step1.desc">
+                                帮助我们快速了解您的业务背景，生成更精准的评估结果
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1.5"
+                                    data-i18n="demo.step1.companyName">公司名称</label>
+                                <input id="company-name" type="text" value="xxxx有限公司"
+                                    class="form-input w-full px-4 py-3 border border-slate-300 rounded-2xl text-sm">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1.5"
+                                    data-i18n="demo.step1.industry">所属行业</label>
+                                <select id="industry"
+                                    class="form-input w-full px-4 py-3 border border-slate-300 rounded-2xl text-sm bg-white">
+                                    <option value="人工智能/科技" data-i18n="demo.step1.industry.ai">人工智能 / 科技</option>
+                                    <option value="金融服务" data-i18n="demo.step1.industry.finance">金融服务</option>
+                                    <option value="制造业" data-i18n="demo.step1.industry.manufacturing">制造业</option>
+                                    <option value="零售与电商" data-i18n="demo.step1.industry.retail">零售与电商</option>
+                                    <option value="医疗健康" data-i18n="demo.step1.industry.healthcare">医疗健康</option>
+                                    <option value="其他" data-i18n="demo.step1.industry.other">其他行业</option>
+                                </select>
+                            </div>
+
+                            <div class="md:col-span-2">
+                                <label class="block text-sm font-medium text-slate-700 mb-1.5"
+                                    data-i18n="demo.step1.scale">企业规模</label>
+                                <div class="grid grid-cols-3 gap-3">
+                                    <label
+                                        class="flex items-center gap-x-2 cursor-pointer border border-slate-200 px-4 py-3 rounded-2xl has-[:checked]:border-teal-500 has-[:checked]:bg-teal-50">
+                                        <input type="radio" name="scale" value="小型 (<100人)" class="accent-teal-600"
+                                            checked>
+                                        <span class="text-sm" data-i18n="demo.step1.scale.small">小型 (&lt;100人)</span>
+                                    </label>
+                                    <label class=" flex items-center gap-x-2 cursor-pointer border border-slate-200 px-4
+                                            py-3 rounded-2xl has-[:checked]:border-teal-500 has-[:checked]:bg-teal-50">
+                                        <input type="radio" name="scale" value="中型 (100-1000人)" class="accent-teal-600">
+                                        <span class="text-sm" data-i18n="demo.step1.scale.medium">中型
+                                            (100-1000人)</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-x-2 cursor-pointer border border-slate-200 px-4 py-3 rounded-2xl has-[:checked]:border-teal-500 has-[:checked]:bg-teal-50">
+                                        <input type="radio" name="scale" value="大型 (>1000人)" class="accent-teal-600">
+                                        <span class="text-sm" data-i18n="demo.step1.scale.large">大型 (&gt;1000人)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2: 数据与场景 -->
+                    <div id="step-2" class="wizard-step hidden">
+                        <div class="mb-6">
+                            <div>
+                                <div class="font-semibold text-xl flex items-center gap-x-2">
+                                    <span class="text-teal-600">02</span>
+                                    <span data-i18n="demo.step2.title">数据与业务场景</span>
+                                </div>
+                                <p class="text-sm text-slate-500 mt-1 mb-2" data-i18n="demo.step2.desc">
+                                    请如实选择您计划跨境的数据类型与主要应用场景</p>
+                            </div>
+                            <button type="button" onclick="openUploadModal()"
+                                class="px-5 py-2.5 text-sm font-semibold bg-teal-50 text-teal-700 hover:bg-teal-100 border border-teal-200 rounded-2xl flex items-center gap-x-2 transition-all self-start sm:self-center shadow-sm">
+                                <i class="fa-solid fa-cloud-arrow-up text-base"></i>
+                                <span data-i18n="demo.step2.upload">数据上传</span>
+                            </button>
+                        </div>
+                        <div class="space-y-6">
+                            <!-- Data Types -->
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2"
+                                    data-i18n="demo.step2.dataType">数据类型（可多选）</label>
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
+                                    <label
+                                        class="flex items-center gap-x-2.5 cursor-pointer px-3 py-2 rounded-2xl hover:bg-slate-50 border border-transparent has-[:checked]:border-teal-200 has-[:checked]:bg-teal-50">
+                                        <input type="checkbox" id="data-pii" class="accent-teal-600 w-4 h-4" checked>
+                                        <span data-i18n="demo.step2.dataType.pii">个人身份信息 (PII)</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-x-2.5 cursor-pointer px-3 py-2 rounded-2xl hover:bg-slate-50 border border-transparent has-[:checked]:border-teal-200 has-[:checked]:bg-teal-50">
+                                        <input type="checkbox" id="data-business" class="accent-teal-600 w-4 h-4"
+                                            checked>
+                                        <span data-i18n="demo.step2.dataType.business">商业机密 / 财务数据</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-x-2.5 cursor-pointer px-3 py-2 rounded-2xl hover:bg-slate-50 border border-transparent has-[:checked]:border-teal-200 has-[:checked]:bg-teal-50">
+                                        <input type="checkbox" id="data-ai" class="accent-teal-600 w-4 h-4">
+                                        <span data-i18n="demo.step2.dataType.ai">AI训练 / 推理数据集</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-x-2.5 cursor-pointer px-3 py-2 rounded-2xl hover:bg-slate-50 border border-transparent has-[:checked]:border-teal-200 has-[:checked]:bg-teal-50">
+                                        <input type="checkbox" id="data-model" class="accent-teal-600 w-4 h-4">
+                                        <span data-i18n="demo.step2.dataType.model">模型参数 / 权重</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-x-2.5 cursor-pointer px-3 py-2 rounded-2xl hover:bg-slate-50 border border-transparent has-[:checked]:border-teal-200 has-[:checked]:bg-teal-50">
+                                        <input type="checkbox" id="data-transaction" class="accent-teal-600 w-4 h-4">
+                                        <span data-i18n="demo.step2.dataType.transaction">交易记录 / 用户行为</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-1.5"
+                                        data-i18n="demo.step2.dataVolume">预计数据规模</label>
+                                    <select id="data-volume"
+                                        class="form-input w-full px-4 py-3 border border-slate-300 rounded-2xl text-sm bg-white">
+                                        <option value="<10GB">&lt; 10 GB</option>
+                                        <option value="10-500GB" selected>10 - 500 GB</option>
+                                        <option value=">500GB">&gt; 500 GB</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-1.5"
+                                        data-i18n="demo.step2.businessScenario">主要业务场景</label>
+                                    <select id="business-scenario"
+                                        class="form-input w-full px-4 py-3 border border-slate-300 rounded-2xl text-sm bg-white">
+                                        <option value="跨境业务运营" data-i18n="demo.step2.scenario.crossBorder">跨境业务运营
+                                        </option>
+                                        <option value="AI模型部署与推理" data-i18n="demo.step2.scenario.aiInference">AI模型部署与推理
+                                        </option>
+                                        <option value="供应链数据协同" data-i18n="demo.step2.scenario.supplyChain">供应链数据协同
+                                        </option>
+                                        <option value="远程协作与办公" data-i18n="demo.step2.scenario.remoteWork">远程协作与办公
+                                        </option>
+                                        <option value="客户数据分析与营销" data-i18n="demo.step2.scenario.customerAnalysis">
+                                            客户数据分析与营销</option>
+                                        <option value="其他" data-i18n="demo.step2.scenario.other">其他场景</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 3: 跨境方向 -->
+                    <div id="step-3" class="wizard-step hidden">
+                        <div class="mb-6">
+                            <div class="font-semibold text-xl flex items-center gap-x-2">
+                                <span class="text-teal-600">03</span>
+                                <span data-i18n="demo.step3.title">跨境数据流动方向</span>
+                            </div>
+                            <p class="text-sm text-slate-500 mt-1" data-i18n="demo.step3.desc">选择主要数据流向及合规敏感度</p>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2"
+                                    data-i18n="demo.step3.destination">主要流动方向（可多选）</label>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+                                    <label
+                                        class="flex items-center gap-x-2 cursor-pointer px-3 py-[9px] rounded-2xl border has-[:checked]:border-teal-500 has-[:checked]:bg-teal-50">
+                                        <input type="checkbox" id="dest-hk" class="accent-teal-600" checked>
+                                        <span data-i18n="demo.step3.dest.cn">中国</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-x-2 cursor-pointer px-3 py-[9px] rounded-2xl border has-[:checked]:border-teal-500 has-[:checked]:bg-teal-50">
+                                        <input type="checkbox" id="dest-macau" class="accent-teal-600" checked>
+                                        <span data-i18n="demo.step3.dest.macao">中国澳门特别行政区</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-x-2 cursor-pointer px-3 py-[9px] rounded-2xl border has-[:checked]:border-teal-500 has-[:checked]:bg-teal-50">
+                                        <input type="checkbox" id="dest-sg" class="accent-teal-600"> <span
+                                            data-i18n="demo.step3.dest.sg">新加坡</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-x-2 cursor-pointer px-3 py-[9px] rounded-2xl border has-[:checked]:border-teal-500 has-[:checked]:bg-teal-50">
+                                        <input type="checkbox" id="dest-id" class="accent-teal-600"> <span
+                                            data-i18n="demo.step3.dest.id">印尼</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-x-2 cursor-pointer px-3 py-[9px] rounded-2xl border has-[:checked]:border-teal-500 has-[:checked]:bg-teal-50">
+                                        <input type="checkbox" id="dest-vn" class="accent-teal-600"> <span
+                                            data-i18n="demo.step3.dest.vn">越南</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-x-2 cursor-pointer px-3 py-[9px] rounded-2xl border has-[:checked]:border-teal-500 has-[:checked]:bg-teal-50">
+                                        <input type="checkbox" id="dest-us" class="accent-teal-600"> <span
+                                            data-i18n="demo.step3.dest.us">美国</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-x-2 cursor-pointer px-3 py-[9px] rounded-2xl border has-[:checked]:border-teal-500 has-[:checked]:bg-teal-50">
+                                        <input type="checkbox" id="dest-eu" class="accent-teal-600"> <span
+                                            data-i18n="demo.step3.dest.eu">欧盟成员国</span>
+                                    </label>
+                                    <label
+                                        class="flex items-center gap-x-2 cursor-pointer px-3 py-[9px] rounded-2xl border has-[:checked]:border-teal-500 has-[:checked]:bg-teal-50">
+                                        <input type="checkbox" id="dest-jp" class="accent-teal-600"> <span
+                                            data-i18n="demo.step3.dest.jp">日本 / 韩国</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-2"
+                                        data-i18n="demo.step3.sensitive.label">是否涉及敏感/受限数据？</label>
+                                    <div class="flex gap-x-4">
+                                        <label class="inline-flex items-center cursor-pointer">
+                                            <input type="radio" name="sensitive" value="yes"
+                                                class="accent-teal-600 mr-2">
+                                            <span data-i18n="demo.step3.sensitive.yes">是（医疗、生物识别、金融核心等）</span>
+                                        </label>
+                                        <label class="inline-flex items-center cursor-pointer">
+                                            <input type="radio" name="sensitive" value="no" class="accent-teal-600 mr-2"
+                                                checked>
+                                            <span data-i18n="demo.step3.sensitive.no">否</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-2"
+                                        data-i18n="demo.step3.anonymized.label">是否已进行脱敏或匿名化处理？</label>
+                                    <div class="flex gap-x-4">
+                                        <label class="inline-flex items-center cursor-pointer">
+                                            <input type="radio" name="anonymized" value="yes"
+                                                class="accent-teal-600 mr-2">
+                                            <span data-i18n="demo.step3.anonymized.yes">是</span>
+                                        </label>
+                                        <label class="inline-flex items-center cursor-pointer">
+                                            <input type="radio" name="anonymized" value="no"
+                                                class="accent-teal-600 mr-2" checked>
+                                            <span data-i18n="demo.step3.anonymized.no">否</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 4: 生成报告 (Results) -->
+                    <div id="step-4" class="wizard-step hidden">
+                        <div id="report-content">
+                            <!-- JS will populate this -->
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Wizard Footer / Navigation -->
+                <div class="bg-slate-50 border-t px-8 py-5 flex items-center justify-between">
+                    <button id="btn-prev" onclick="prevStep()"
+                        class="px-6 py-2.5 text-sm font-medium border border-slate-300 hover:bg-white rounded-2xl flex items-center gap-x-2 disabled:opacity-40">
+                        <i class="fa-solid fa-chevron-left"></i>
+                        <span data-i18n="demo.wizard.prev">上一步</span>
+                    </button>
+
+                    <div class="flex items-center gap-x-3">
+                        <button id="btn-next" onclick="nextStep()"
+                            class="px-8 py-2.5 bg-teal-600 hover:bg-teal-700 active:bg-teal-800 transition text-white font-semibold text-sm rounded-2xl flex items-center gap-x-2">
+                            <span id="btn-next-text" data-i18n="demo.wizard.next">下一步</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-4 text-xs text-slate-500 flex items-center justify-center gap-x-2">
+                <i class="fa-solid fa-info-circle"></i>
+                <span data-i18n="demo.wizard.note">本评估为演示模拟，实际服务以正式评估为准。评估结果将用于匹配最优服务资源。</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 新增：平台动态页 -->
+    <section id="dynamics" class="max-w-screen-2xl mx-auto px-8 py-14 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header -->
+            <div class="mb-8">
+                <!-- Title Block -->
+                <div class="mb-4">
+                    <h2 class="section-header" data-i18n="dynamics.section.title">平台动态</h2>
+                    <p class="text-slate-600 mt-2 max-w-2xl" data-i18n="dynamics.section.subtitle">
+                        聚焦数据跨境、AI算力、政策标准、企业出海的最新资讯与行业洞察</p>
+                </div>
+
+                <!-- Search + Filters Row -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                    <div class="relative flex-1 max-w-md">
+                        <input id="dynamics-search" type="text"
+                            class="form-input w-full pl-10 pr-4 py-2.5 border border-slate-300 rounded-2xl text-sm focus:border-teal-500"
+                            data-i18n="dynamics.search.placeholder" placeholder="搜索标题或关键词..."
+                            onkeyup="filterDynamics()">
+                        <i class="fa-solid fa-search absolute left-4 top-3 text-slate-400"></i>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2" id="dynamics-filter-buttons">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured News -->
+            <div id="dynamics-featured" class="mb-8">
+                <!-- JS injected featured card -->
+            </div>
+
+            <!-- News Grid -->
+            <div id="dynamics-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- JS populated news cards -->
+            </div>
+
+            <!-- Load More -->
+            <div class="text-center mt-8">
+                <button id="load-more-dynamics" onclick="loadMoreDynamics()"
+                    class="px-8 py-3 border border-slate-300 hover:bg-slate-50 hover:border-slate-400 rounded-2xl text-sm font-medium transition flex items-center gap-x-2 mx-auto">
+                    <span data-i18n="dynamics.loadMore">加载更多动态</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div id="upload-modal"
+        class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-[100] p-4">
+        <div class="modal bg-white rounded-3xl max-w-md w-full p-6 border border-slate-200 shadow-2xl">
+            <div class="flex items-center gap-x-3 text-amber-600 mb-4">
+                <div class="w-10 h-10 bg-amber-50 rounded-2xl flex items-center justify-center">
+                    <i class="fa-solid fa-triangle-exclamation text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900" data-i18n="uploadModal.title">
+                    数据上传提示
+                </h3>
+            </div>
+
+            <p class="text-sm text-slate-600 leading-relaxed mb-6 bg-slate-50 p-4 rounded-2xl border border-slate-100"
+                data-i18n="uploadModal.desc">
+                请上传数据样品，合规智能体分析后，数据将于平台彻底删除。
+            </p>
+
+            <div id="drop-zone"
+                class="border-2 border-dashed border-slate-200 rounded-2xl p-5 text-center mb-6 hover:border-teal-400 transition cursor-pointer bg-slate-50/50">
+                <i class="fa-solid fa-file-invoice text-slate-400 text-3xl mb-2 transition-colors"></i>
+                <span class="block text-xs text-slate-500 transition-colors" data-i18n="uploadModal.dropHint">
+                    点击选择或拖拽数据样品文件到此处 (.csv, .json, .xlsx)
+                </span>
+            </div>
+
+            <div class="flex items-center justify-end gap-x-3">
+                <button onclick="closeUploadModal()"
+                    class="px-5 py-2.5 text-sm font-medium border border-slate-300 hover:bg-slate-50 text-slate-700 rounded-xl transition"
+                    data-i18n="common.cancel">
+                    取消
+                </button>
+                <button onclick="confirmUpload()"
+                    class="px-5 py-2.5 text-sm font-semibold bg-teal-600 hover:bg-teal-700 text-white rounded-xl shadow-md transition"
+                    data-i18n="common.confirm">
+                    确定
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 text-sm">
+        <div class="max-w-screen-2xl mx-auto px-8 pt-10 pb-8">
+            <div class="flex flex-col md:flex-row justify-between gap-y-8">
+                <div>
+                    <!-- Logo -->
+                    <div class="flex items-center gap-x-2.5 text-white mb-3 flex-shrink-0">
+                        <div
+                            class="w-10 h-10 bg-teal-600 rounded-2xl flex items-center justify-center shadow-inner flex-shrink-0">
+                            <i class="fa-solid fa-globe text-white text-2xl"></i>
+                        </div>
+                        <div class="min-w-0">
+                            <div class="font-bold text-xl tracking-tighter" data-i18n="footer.logo">
+                                澳门数据跨境与人工智能合作服务中心
+                            </div>
+                            <div
+                                class="text-[10px] text-teal-400 -mt-0.5 font-medium tracking-[1.5px] whitespace-nowrap">
+                                MACAO CROSS-BORDER DATA &amp; AI COLLABORATION HUB
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 描述 -->
+                    <div class="max-w-xs text-xs leading-relaxed" data-i18n="footer.description">
+                        以澳门为枢纽，聚合境内与境外数据及算力资源，<br>为中资企业提供跨境合规与出海一站式服务。
+                    </div>
+
+                    <!-- Copyright -->
+                    <div class="mt-6 text-xs" data-i18n="footer.copyright">
+                        © 2026 澳门数据跨境与人工智能合作服务中心<br>
+                        保留所有权利
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-x-10 text-xs">
+                    <!-- 联系方式 -->
+                    <div>
+                        <div class="font-semibold text-white mb-3 tracking-wider text-xs" data-i18n="footer.contact">
+                            联系方式
+                        </div>
+                        <div class="space-y-1.5">
+                            <div>service@macao-data-ai.gov.mo</div>
+                            <div>+853 2888 0000</div>
+                            <div data-i18n="footer.contact.location">
+                                澳门特别行政区
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 快速链接 -->
+                    <div>
+                        <div class="font-semibold text-white mb-3 tracking-wider text-xs" data-i18n="footer.quickLinks">
+                            快速链接
+                        </div>
+                        <div class="space-y-1.5">
+                            <div class="hover:text-teal-400 cursor-pointer"
+                                onclick="document.getElementById('demo').scrollIntoView({ behavior: 'smooth' })"
+                                data-i18n="footer.complianceAssessment">
+                                合规自助评估
+                            </div>
+                            <div class="hover:text-teal-400 cursor-pointer" data-i18n="footer.terms">
+                                服务条款
+                            </div>
+                            <div class="hover:text-teal-400 cursor-pointer" data-i18n="footer.privacy">
+                                隐私政策
+                            </div>
+                            <div class="hover:text-teal-400 cursor-pointer" data-i18n="footer.whitepaper">
+                                数据跨境白皮书
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 里程碑 -->
+                    <div class="col-span-2 md:col-span-1">
+                        <div class="font-semibold text-white mb-3 tracking-wider text-xs" data-i18n="footer.milestone">
+                            里程碑
+                        </div>
+                        <div class="text-xs leading-relaxed" data-i18n="footer.milestoneText">
+                            2026年10月<br>门户Demo + 能力展示
+                        </div>
+                        <div
+                            class="mt-4 inline-block px-3 py-1 text-[10px] border border-white/30 text-white/70 rounded-2xl">
+                            v1.0 Demo
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Capability Detail Modal -->
+    <div id="capability-modal" onclick="if (event.target.id === 'capability-modal') hideCapabilityModal()"
+        class="hidden fixed inset-0 bg-black/60 z-[60] flex items-center justify-center p-4">
+        <div onclick="event.stopImmediatePropagation()"
+            class="bg-white w-full max-w-2xl rounded-3xl overflow-hidden modal">
+            <div class="px-8 py-6 border-b flex items-center justify-between bg-slate-50">
+                <div id="modal-capability-title" class="font-bold text-2xl"></div>
+                <button onclick="hideCapabilityModal()"
+                    class="w-9 h-9 flex items-center justify-center text-xl text-slate-400 hover:text-slate-600">×</button>
+            </div>
+            <div class="p-8" id="modal-capability-body">
+                <!-- Dynamic content injected by JS -->
+            </div>
+            <div class="px-8 py-5 bg-slate-50 border-t flex justify-end gap-x-3">
+                <button onclick="hideCapabilityModal()"
+                    class="px-6 py-2 text-sm font-medium border border-slate-300 rounded-2xl hover:bg-white">关闭</button>
+                <button id="modal-experience-btn" onclick="hideCapabilityModal(); scrollToDemoAndStartWizard()"
+                    class="px-7 py-2 bg-teal-600 text-white text-sm font-semibold rounded-2xl">立即体验此能力</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lead / Conversion Modal -->
+    <div id="lead-modal" onclick="if (event.target.id === 'lead-modal') hideLeadModal()"
+        class="hidden fixed inset-0 bg-black/60 z-[70] flex items-center justify-center p-4">
+        <div onclick="event.stopImmediatePropagation()"
+            class="bg-white w-full max-w-lg rounded-3xl overflow-hidden modal">
+
+            <!-- Header -->
+            <div class="px-7 py-5 border-b">
+                <div class="font-bold text-xl" data-i18n="leadModal.title">
+                    申请服务 / 预约专属顾问
+                </div>
+                <div class="text-sm text-slate-500" data-i18n="leadModal.subtitle">
+                    提交后，专属顾问将在24小时内与您联系
+                </div>
+            </div>
+
+            <!-- Body -->
+            <div class="p-7 space-y-4">
+                <div>
+                    <label class="text-xs font-medium text-slate-600" data-i18n="leadModal.serviceModules">
+                        申请的服务模块
+                    </label>
+                    <div class="mt-1.5 flex flex-wrap gap-2" id="lead-services-tags">
+                        <!-- Populated dynamically by JS -->
+                    </div>
+                </div>
+
+                <div>
+                    <label class="text-xs font-medium text-slate-600" data-i18n="leadModal.description">
+                        简要需求描述
+                    </label>
+                    <textarea id="lead-description" rows="3"
+                        class="form-input w-full mt-1.5 border border-slate-300 rounded-2xl p-3 text-sm"
+                        data-i18n="leadModal.descriptionPlaceholder"
+                        placeholder="例如：我们计划将AI训练数据迁移至东南亚节点，需要完整合规方案与算力报价..."></textarea>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="text-xs font-medium text-slate-600" data-i18n="leadModal.contactPerson">
+                            联系人
+                        </label>
+                        <input id="lead-contact" type="text" value=""
+                            class="form-input w-full mt-1.5 border border-slate-300 rounded-2xl px-4 py-2.5 text-sm">
+                    </div>
+                    <div>
+                        <label class="text-xs font-medium text-slate-600" data-i18n="leadModal.phone">
+                            联系电话 / 微信
+                        </label>
+                        <input id="lead-phone" type="text" value=""
+                            class="form-input w-full mt-1.5 border border-slate-300 rounded-2xl px-4 py-2.5 text-sm">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="px-7 py-5 bg-slate-50 border-t flex items-center justify-between">
+                <div class="text-xs text-slate-500" data-i18n="leadModal.privacy">
+                    我们承诺严格保密您的信息
+                </div>
+                <div>
+                    <button onclick="hideLeadModal()" class="px-5 py-2 text-sm" data-i18n="common.cancel">
+                        取消
+                    </button>
+                    <button onclick="submitLeadForm()"
+                        class="px-6 py-2 bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold rounded-2xl"
+                        data-i18n="leadModal.submit">
+                        提交申请
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== Toast 容器 ==================== -->
+    <div id="toast-container"
+        class="fixed bottom-24 right-6 z-[100] space-y-3 pointer-events-none flex flex-col-reverse"></div>
+
+    <!-- ==================== Chatbox（浮动智能顾问） ==================== -->
+    <!-- 右下角浮动按钮 -->
+    <button id="chat-toggle-btn"
+        class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-teal-600 hover:bg-teal-700 text-white rounded-full shadow-xl flex items-center justify-center cursor-pointer transition-all hover:scale-105 active:scale-95">
+        <i class="fa-solid fa-comments text-xl"></i>
+    </button>
+
+    <!-- 聊天窗口 -->
+    <div id="chat-window"
+        class="hidden fixed bottom-24 right-6 z-50 w-[340px] sm:w-96 bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col"
+        style="height: 480px; max-height: calc(100vh - 140px);">
+
+        <!-- Header -->
+        <div class="bg-teal-600 text-white px-5 py-4 flex items-center justify-between flex-shrink-0">
+            <div class="flex items-center gap-x-3">
+                <div class="w-9 h-9 bg-white/20 rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div>
+                    <div class="font-semibold text-sm" data-i18n="chatbox.title">智能顾问</div>
+                    <div class="text-[10px] text-teal-100" data-i18n="chatbox.status">在线 · 实时响应</div>
+                </div>
+            </div>
+            <button id="chat-close-btn"
+                class="w-8 h-8 flex items-center justify-center hover:bg-white/10 rounded-full transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Messages 区域 -->
+        <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-3 bg-slate-50">
+            <!-- 初始欢迎消息 -->
+            <div class="flex gap-x-2">
+                <div
+                    class="w-8 h-8 bg-teal-100 text-teal-600 rounded-full flex-shrink-0 flex items-center justify-center text-xs">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="bg-white px-3 py-2 rounded-2xl rounded-tl-none max-w-[75%] shadow-sm text-sm leading-relaxed"
+                    data-i18n="chatbox.welcome">
+                    您好！我是澳门数据跨境与人工智能合作服务中心的智能顾问，有什么可以帮您的吗？
+                </div>
+            </div>
+        </div>
+
+        <!-- 输入区域 -->
+        <div class="p-3 border-t bg-white flex gap-x-2 flex-shrink-0">
+            <input id="chat-input" type="text"
+                class="flex-1 px-4 py-2.5 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500"
+                data-i18n="chatbox.placeholder" placeholder="输入您的问题...">
+            <button id="chat-send-btn"
+                class="w-10 h-10 bg-teal-600 hover:bg-teal-700 text-white rounded-2xl flex items-center justify-center transition flex-shrink-0">
+                <i class="fa-solid fa-paper-plane text-sm"></i>
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>
