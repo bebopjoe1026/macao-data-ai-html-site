@@ -13,6 +13,27 @@ body {
     background: linear-gradient(135deg, #0F172A 0%, #134E4A 100%);
 }
 
+/* 英文标题强制两行 + 字号微调，避免溢出 */
+html[lang="en"] h1[data-i18n="hero.title"] {
+    font-size: 2.25rem;
+    /* 约 text-4xl */
+    line-height: 1.15;
+}
+
+@media (min-width: 768px) {
+    html[lang="en"] h1[data-i18n="hero.title"] {
+        font-size: 3.25rem;
+        /* 约 text-5xl / 6xl 之间 */
+    }
+}
+
+@media (min-width: 1024px) {
+    html[lang="en"] h1[data-i18n="hero.title"] {
+        font-size: 3.75rem;
+        /* 接近原来的 text-6xl */
+    }
+}
+
 .section-header {
     font-size: 2.25rem;
     line-height: 2.5rem;

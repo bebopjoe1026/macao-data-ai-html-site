@@ -28,8 +28,7 @@ const translations = {
         'contactModal.submit': '提交咨询请求',
 
         // Hero 区域
-        "hero.title.line1": "澳门数据跨境与人工智能",
-        "hero.title.line2": "合作服务中心",
+        "hero.title": "数据跨境与人工智能<br>国际合作服务中心",
         'hero.subtitle': '一站式跨境数据与AI能力聚合平台',
         'hero.tagline': '政策友好枢纽 · 多区域算力 · 合规专家网络',
         'hero.cta.assessment': '免费启动数据合规自助评估',
@@ -231,9 +230,9 @@ const translations = {
 
 
         // ==================== Footer ====================
-        'footer.logo': '澳门数据跨境与人工智能合作服务中心',
+        'footer.logo': '数据跨境与人工智能国际合作服务中心',
         'footer.description': '以澳门为枢纽，聚合境内与境外数据及算力资源，<br>为中资企业提供跨境合规与出海一站式服务。',
-        'footer.copyright': '© 2026 澳门数据跨境与人工智能合作服务中心<br>保留所有权利',
+        'footer.copyright': '© 2026 数据跨境与人工智能国际合作服务中心<br>保留所有权利',
         'footer.contact': '联系方式',
         'footer.contact.location': '澳门特别行政区',
         'footer.quickLinks': '快速链接',
@@ -274,8 +273,7 @@ const translations = {
         'contactModal.submit': '提交諮詢請求',
 
         // Hero 区域
-        "hero.title.line1": "澳門數據跨境與人工智能",
-        "hero.title.line2": "合作服務中心",
+        "hero.title": "數據跨境與人工智能<br>國際合作服務中心",
         'hero.subtitle': '一站式跨境數據與AI能力聚合平台',
         'hero.tagline': '政策友好樞紐 · 多區域算力 · 合規專家網絡',
         'hero.cta.assessment': '免費啟動數據合規自助評估',
@@ -479,9 +477,9 @@ const translations = {
         'leadModal.submit': '提交申請',
 
         // ==================== Footer ====================
-        'footer.logo': '澳門數據跨境與人工智能合作服務中心',
+        'footer.logo': '數據跨境與人工智能國際合作服務中心',
         'footer.description': '以澳門為樞紐，聚合境內與境外數據及算力資源，<br>為中資企業提供跨境合規與出海一站式服務。',
-        'footer.copyright': '© 2026 澳門數據跨境與人工智能合作服務中心<br>保留所有權利',
+        'footer.copyright': '© 2026 數據跨境與人工智能國際合作服務中心<br>保留所有權利',
         'footer.contact': '聯絡方式',
         'footer.contact.location': '澳門特別行政區',
         'footer.quickLinks': '快速連結',
@@ -522,8 +520,8 @@ const translations = {
         'contactModal.submit': 'Submit Inquiry',
 
         // Hero 区域
-        "hero.title.line1": "Macao Cross-border Data",
-        "hero.title.line2": "AI Collaboration Hub",
+        // Hero 区域
+        "hero.title": `<span class="block whitespace-nowrap">International Cooperation Hub</span><span class="block whitespace-nowrap">on Cross-Border Data & AI</span>`,
         'hero.subtitle': 'One-stop platform for cross-border data and AI capabilities',
         'hero.tagline': 'Policy-friendly hub · Multi-region computing power · Compliance expert network',
         'hero.cta.assessment': 'Start Free Compliance Self-Assessment',
@@ -723,9 +721,9 @@ const translations = {
         'leadModal.submit': 'Submit Application',
 
         // ==================== Footer ====================
-        'footer.logo': 'Macao Cross-Border Data & AI Collaboration Hub',
-        'footer.description': 'With Macao as the hub, we aggregate domestic and international data and computing resources,<br>providing Chinese enterprises with one-stop cross-border compliance and global expansion services.',
-        'footer.copyright': '© 2026 Macao Cross-Border Data & AI Collaboration Hub<br>All Rights Reserved',
+        'footer.logo': '',
+        'footer.description': `<span class="block">With Macao as the hub, we aggregate domestic and international data and computing resources,</span><span class="block">providing Chinese enterprises with one-stop cross-border compliance and global expansion services.</span>`,
+        'footer.copyright': '© 2026 International Cooperation Hub on Cross-Border Data & AI<br>All Rights Reserved',
         'footer.contact': 'Contact Information',
         'footer.contact.location': 'Macao SAR, China',
         'footer.quickLinks': 'Quick Links',
